@@ -17,7 +17,7 @@
 								</validation-provider>
 							</v-col>
 							<v-col md="6">
-								<validation-provider v-slot="{ errors }" name="Nome" rules="xrequired|max:100">
+								<validation-provider v-slot="{ errors }" name="Nome" rules="required|max:100">
 									<v-text-field
 										v-model="form.nome"
 										:counter="100"
@@ -35,6 +35,7 @@
 										:error-messages="errors"
 										label="CPF"
 										required
+										:disabled="action=='update'"
 									></v-text-field>
 								</validation-provider>
 							</v-col>
@@ -128,7 +129,6 @@ export default {
 	},
 
 	mounted() {
-		console.log("form");
 	},
 };
 </script>
