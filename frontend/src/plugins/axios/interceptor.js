@@ -4,7 +4,6 @@ export default () => {
 
     axios.interceptors.response.use(
         res => {
-            console.log('uiiii');
             return res;
         },
         error => {

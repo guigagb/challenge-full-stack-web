@@ -39,6 +39,8 @@ export default {
 				this.students.push(data);
 
 				this.$router.push("/alunos");
+
+				this.$notify.success("Aluno incluso com sucesso!");
 			} catch (error) {
 				this.$notify.error(error.message);
 			} finally {
