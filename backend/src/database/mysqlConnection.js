@@ -5,10 +5,10 @@ module.exports = class ConexaoMySQL {
     constructor() {
         this.options = {
             connectionLimit: 10,
-            host: 'sql10.freemysqlhosting.net',
-            user: 'sql10423630',
-            password: '3bHssESXb2',
-            database: 'sql10423630'
+            host: 'us-cdbr-east-04.cleardb.com',
+            user: 'b15ca47b5ae60c',
+            password: '784ce5a2',
+            database: 'heroku_ea408c0af5a5def'
         }
 
         this.connection = mysql.createPool(this.options)
@@ -16,11 +16,19 @@ module.exports = class ConexaoMySQL {
 
     query(sql) {
         return new Promise((res, rej) => {
+
             this.connection.query(sql, (error, results) => {
+
                 if (error)
                     rej(error)
-                else
-                    res(JSON.parse(JSON.stringify(results)))
+
+                res(JSON.parse(JSON.stringify(results)))
+
+                this.connection.end((err) => {
+                    if (error)
+                        console.log('errro');
+                })
+
             })
 
         })
