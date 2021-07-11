@@ -12,6 +12,9 @@
     request-> routes -> validations -> controllers -> services -> models -> database
 
     <br>A conexão com o banco de dados foi feita sem ORM com querys usando SQL puro, foi utilizada a lib sql-query para facilitar a criação de sql com parâmetros.
+
+    <br>
+    No vscode foi utilizado o thunder client como client http. O mesmo foi escolhido pois todas as coleções e requisições criadas são armazenadas em um arquivo que pode subir junto do projeto para o git e todos os desenvolvedores terão acesso (tipo um postman só que gratuito e direto no vscode).
 <br>
 * Lista de bibliotecas de terceiros utilizadas
     "celebrate": "Middleware p/ validar parâmetros rota integrado com a lib JOI",
